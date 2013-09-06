@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE extension>
+<extension version="2.5.0" type="plugin" group="system" method="upgrade">
+	<name>plg_system_jomsocialkunenaprofilesync</name>
+	<version>1.0</version>
+	<creationDate>2013-05-09</creationDate>
+	<author>Florian DAL FITTO</author>
+	<authorEmail>florian@kunena.org</authorEmail>
+	<authorUrl>http://www.kunena.org</authorUrl>
+	<copyright>Copyright (C) 2013 Florian DAL FITTO. All rights reserved.</copyright>
+	<license>GNU/GPL</license>
+	<description>PLG_SYSTEM_JOMSOCIALKUNENAPROFILESYNC_XML_DESCRIPTION</description>
+
+	<files>
+		<filename plugin="jomsocialkunenaprofilesync">jomsocialkunenaprofilesync.php</filename>
+		<folder>elements</folder>
+    <folder>helper</folder>    		
+		<folder>language</folder>		
+	</files>
+
+	<languages folder="language">		
+		<language tag="en-GB">en-GB.plg_system_jomsocialkunenaprofilesync.ini</language>
+		<language tag="en-GB">en-GB.plg_system_jomsocialkunenaprofilesync.sys.ini</language>		
+		<language tag="fr-FR">fr-FR.plg_system_jomsocialkunenaprofilesync.ini</language>		
+		<language tag="pl-PL">pl-PL.plg_system_jomsocialkunenaprofilesync.ini</language>		
+	</languages>
+
+  <config>
+		<fields name="params" addfieldpath="/plugins/system/jomsocialkunenaprofilesync/elements">
+			<fieldset name="basic">
+				<field name="@spacer" type="myspacer" default="JomSocial" label="Kunena" description="" />
+				<field name="@spacer" type="spacer" default="PLG_SYSTEM_JOMSOCIALKUNENASYNC_PROFILE_EDIT_PROFILE" label="" description="" />					
+				<field name="personaltext"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_PERSONALTEXT" description="" />				
+				<field name="birthdate"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_BIRTHDATE" description="" />
+				<field name="location"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_LOCATION" description="" />
+				<field name="gender"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_GENDER" description="" />
+				<field name="websiteurl"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_WEBSITE_URL" description="" />
+				<field name="twitter"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_TWITTER" description="" />
+				<field name="facebook"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_FACEBOOK" description="" />
+				<field name="myspace"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_MYSPACE" description="" />
+				<field name="skype"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_SKYPE" description="" />
+				<field name="linkedin"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_LINKEDIN" description="" />
+				<field name="delicious"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_DELICIOUS" description="" />
+				<field name="friendfeed"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_FRIENDFEED" description="" />
+				<field name="digg"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_DIGG" description="" />
+				<field name="yim"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_YIM" description="" />
+				<field name="aim"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_AIM" description="" />
+				<field name="gtalk"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_GTALK" description="" />
+				<field name="icq"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_ICQ" description="" />
+				<field name="msn"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_MSN" description="" />
+				<field name="blogspot"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_BLOGSPOT" description="" />
+				<field name="flickr"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_FLICKR" description="" />
+				<field name="bebo"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_BEBO" description="" />
+				<field name="signature"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_SIGNATURE" description="" />
+				<field name="@spacer"  type="spacer" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_PROFILE_EDIT_SETTINGS" description="" />
+				<field name="messageordering"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_USER_ORDER" description="" />
+				<field name="hidemail"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_USER_HIDEEMAIL" description="" />
+				<field name="showonline"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_USER_SHOWONLINE" description="" />
+				<field name="@spacer"  type="spacer" label="" description="" />
+				<field name="@spacer"  type="spacer" default="PLG_SYSTEM_JOMSOCIALKUNENASYNC_CONVERSION" label="" description="" />
+				<field name="conv_gender_male"  type="text" default="Male" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_GENDER_MALE" description="PLG_SYSTEM_JOMSOCIALKUNENASYNC_GENDER_MALE_DESCRIPTION" />
+				<field name="conv_gender_female"  type="text" default="Female" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_GENDER_FEMALE" description="PLG_SYSTEM_JOMSOCIALKUNENASYNC_GENDER_FEMALE_DESCRIPTION" />
+				<field name="conv_ordering_asc"  type="text" default="Ascending" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_USER_ORDER_ASC" description="PLG_SYSTEM_JOMSOCIALKUNENASYNC_ORDER_ASC_DESCRIPTION" />
+				<field name="conv_ordering_desc"  type="text" default="Descending" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_USER_ORDER_DESC" description="PLG_SYSTEM_JOMSOCIALKUNENASYNC_ORDER_DESC_DESCRIPTION" />
+				<field name="conv_no"  type="text" default="No" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_A_NO" description="PLG_SYSTEM_JOMSOCIALKUNENASYNC_A_NO_DESCRIPTION" />
+				<field name="conv_yes"  type="text" default="Yes" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_A_YES" description="PLG_SYSTEM_JOMSOCIALKUNENASYNC_A_YES_DESCRIPTION" />
+				<field name="@spacer"  type="spacer" default="PLG_SYSTEM_JOMSOCIALKUNENASYNC_OTHER" label="" description="" />
+				<field name="conv_websitename"  type="profilefields" default="0" label="PLG_SYSTEM_JOMSOCIALKUNENASYNC_MYPROFILE_WEBSITE_NAME" description="PLG_SYSTEM_JOMSOCIALKUNENASYNC_WEBSITE_NAME_DESCRIPTION" />
+      </fieldset>
+		</fields>
+	</config>
+</extension>
