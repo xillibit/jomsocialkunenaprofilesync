@@ -18,29 +18,31 @@ jimport('joomla.form.formfield');
  * @author Piotr Minkina <likemandrake@o2.pl>
  */
 class JFormFieldProfileFields extends JFormField {
-    protected $type = 'Profile Fields';    
-    
+    protected $type = 'Profile Fields';
+
      /**
      * Prepares select list of JomSocial fields
      *
      * @see JElement::fetchTooltip()
      */
       protected function getInput() {
-        if ( JFolder::exists(JPATH_ADMINISTRATOR .  '/components/com_community/models') ) {
+      	jimport('joomla.filesystem.folder');
+
+      	if ( JFolder::exists(JPATH_ADMINISTRATOR .  '/components/com_community/models') ) {
         JModelLegacy::addIncludePath(JPATH_ADMINISTRATOR .  '/components/com_community/models');
-      
+
         $profiles = JModelLegacy::getInstance('Profiles', 'CommunityModel');
         $fields   = $profiles->getFields(false);
         $attribs  = array('class' => 'inputbox');
         $options  = array();
-        
-        
+
+
         $none = $this->element['none'];
 
 		    $size = $this->element['size'];
 		    $class = $this->element['class'];
-        
-        
+
+
         $attribs = ' ';
 		if ($size) {
 			$attribs .= 'size="' . $size . '"';
@@ -53,7 +55,7 @@ class JFormFieldProfileFields extends JFormField {
 		if (!empty($this->element['multiple'])) {
 			$attribs .= ' multiple="multiple"';
 		}
-        
+
            $options[] = JHTML::_('select.option', '0', ' ----- ' . JText::_('Disabled') . ' ----- ');
         foreach ($fields as $field)
         {
@@ -74,6 +76,6 @@ class JFormFieldProfileFields extends JFormField {
                         $this->name,
                         JArrayHelper::toString($attribs),
                         'value', 'text',  $this->value);
-       }                 
+       }
     }
 }
